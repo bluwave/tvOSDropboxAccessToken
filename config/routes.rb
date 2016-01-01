@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'dropbox/index'
   get 'tv', :to => 'dropbox#tv'
   get 'tv/:tv_token', :to => 'dropbox#dropbox_access_token'
   get 'addtv/:tv_token', :to => 'dropbox#addtv' #, constraints: { tv_token: /[A-Z]+[0-9]+{6}/ }
@@ -12,7 +11,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'dropbox#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

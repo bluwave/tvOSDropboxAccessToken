@@ -3,7 +3,7 @@ class DropboxController < ApplicationController
   require 'dropbox_sdk'
 
   def index
-    redirect_to url_for(:action => 'login')
+    render :text => ""
   end
 
   def tv
