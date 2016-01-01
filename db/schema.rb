@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151231092015) do
+ActiveRecord::Schema.define(version: 20160101083745) do
 
   create_table "access", force: :cascade do |t|
     t.string   "tv_token"
     t.string   "dropbox_access_token"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
+    t.string   "user_id"
   end
 
   add_index "access", ["tv_token"], name: "index_Access_on_tv_token"

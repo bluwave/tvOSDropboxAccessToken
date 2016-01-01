@@ -25,7 +25,7 @@ class DropboxController < ApplicationController
 
     model = access_model_by_tv_token
     if model and model.dropbox_access_token
-      json = {:db_access_token => model.dropbox_access_token}
+      json = {:db_access_token => model.dropbox_access_token, :user_id => model.user_id}
       status = :ok
     else
       json = {:error => unable_to_find_tv_message}
@@ -59,7 +59,7 @@ class DropboxController < ApplicationController
       model = access_model_by_tv_token(tv_token)
 
       if model
-        model.update(:dropbox_access_token => access_token)
+        model.update(:dropbox_access_token => access_token, :user_id => user_id)
         redirect_to url_for(:action => 'tv_added')
       end
 
