@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   get 'dropbox/index'
   get 'tv', :to => 'dropbox#tv'
+  get 'tv/:tv_token', :to => 'dropbox#dropbox_access_token'
   get 'addtv/:tv_token', :to => 'dropbox#addtv' #, constraints: { tv_token: /[A-Z]+[0-9]+{6}/ }
   get 'dropbox/callback'
   get 'success', :to => 'dropbox#tv_added'
