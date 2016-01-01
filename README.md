@@ -32,3 +32,6 @@ to get the Dropbox access_token and proceed to with interacting with Dropbox API
 
 
 
+#### Dropbox Setup ####
+Visit [Dropbox apps](https://www.dropbox.com/developers/apps) to setup the callback URL or your rails app.
+	( My Apps > Select app > Settings > OAuth2 Redirect URIs )
