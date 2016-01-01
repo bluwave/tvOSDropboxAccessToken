@@ -1,28 +1,28 @@
-== README
+This is a prototype to get Dropbox login working on tvOS.  tvOS does not support webkit and so OAuth is difficult.  As suggested by [Dropbox](https://www.dropboxforum.com/hc/en-us/community/posts/204784269-Authentication-to-dropbox-on-tvOS) tvOS app can hit the endpoint
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+`/tv`
 
-Things you may want to cover:
+and get back the following JSON response: 
 
-* Ruby version
+`{tv_token:"cda5a09", url:"http(s)://<host>/addtv/cda5a09"}`
 
-* System dependencies
+The tvOS app can use the code or the url to show to the user.  User can then hit that URL on a phone or browser of some sort and do the Dropbox OAuth login to get an access token.  Once the access token is saved by the rails app, the tvOS app can hit  
 
-* Configuration
+`/tv/:tv_token`  (still may need to add this endpoint)
 
-* Database creation
+`{db_access_token : "<Dropbox access token>"}`
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+to get the Dropbox access_token and proceed to with interacting with Dropbox API.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+** TL;DR Steps: **
+
+- 1 TV app makes request to rails app endpoint `/tv` to get tv token
+- 2 TV app shows user on screen the url to visit with phone or other browser
+- 3 User enters the url and is redirected to Dropbox login
+- 4 Dropbox redirects back to rails app with access token
+- 5 Rails app saves access token
+- 6 TV app should have some sort of button or retry to request access token from `/tv/:tv_token` once user has finished logging in on Dropbox
+
+
+
