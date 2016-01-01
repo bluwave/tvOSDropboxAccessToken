@@ -23,16 +23,11 @@ to get the Dropbox access_token and proceed to with interacting with Dropbox API
 #### TL;DR Steps: ####
 
 - 1 TV app makes request to rails app endpoint `/tv` to get tv token
-- 2 TV app shows user on screen the url to visit with phone or other browser
+- 2 TV app shows user on screen the url to visit with phone or other browser ( [Example](https://www.dropboxforum.com/hc/user_images/rxHsYVjTe_VSFwCzdMF6KQ.jpeg) )
 - 3 User enters the url and is redirected to Dropbox login
 - 4 Dropbox redirects back to rails app with access token
 - 5 Rails app saves access token
 - 6 TV app should have some sort of button or retry to request access token from `/tv/:tv_token` once user has finished logging in on Dropbox
-
-
-#### Dropbox Example suggestion ####
-
-[Dropbox example](https://www.dropboxforum.com/hc/user_images/rxHsYVjTe_VSFwCzdMF6KQ.jpeg)
 
 
 
