@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :access
   get 'dropbox/index'
   get 'tv', :to => 'dropbox#tv'
   get 'addtv/:tv_token', :to => 'dropbox#addtv' #, constraints: { tv_token: /[A-Z]+[0-9]+{6}/ }
