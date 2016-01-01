@@ -15,7 +15,7 @@ The tvOS app can use the code or the url to show to the user.  User can then hit
 
 `/tv/:tv_token`  
 
-`{db_access_token : "<Dropbox access token>"}`
+`{db_access_token : "<Dropbox access token>", user_id : "<user id>"}`
 
 to get the Dropbox access_token and proceed to with interacting with Dropbox API.
 
