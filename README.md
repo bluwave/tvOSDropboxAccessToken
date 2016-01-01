@@ -13,7 +13,7 @@ and get back the following JSON response:
 
 The tvOS app can use the code or the url to show to the user.  User can then hit that URL on a phone or browser of some sort and do the Dropbox OAuth login to get an access token.  Once the access token is saved by the rails app, the tvOS app can hit  
 
-`/tv/:tv_token`  (still may need to add this endpoint)
+`/tv/:tv_token`  
 
 `{db_access_token : "<Dropbox access token>"}`
 
